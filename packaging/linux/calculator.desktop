@@ -1,0 +1,8 @@
+[Desktop Entry]
+Type=Application
+Name=Calculator
+Comment=Expression-based calculator with a recursive descent parser
+Exec=calculator
+Icon=calculator
+Terminal=false
+Categories=Utility;Calculator;

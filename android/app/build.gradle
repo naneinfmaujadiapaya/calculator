@@ -1,0 +1,52 @@
+apply plugin: 'com.android.application'
+
+android {
+    namespace 'com.naneinf.calculator'
+    compileSdk 34
+    ndkVersion "26.1.10909125"
+
+    // Reuse the same assets/ (fonts) the desktop build packages, instead of
+    // keeping a second copy under android/app/src/main/assets.
+    sourceSets {
+        main {
+            assets.srcDirs = ['../../assets']
+        }
+    }
+
+    defaultConfig {
+        applicationId "com.naneinf.calculator"
+        minSdk 24
+        targetSdk 34
+        versionCode 1
+        versionName "1.0"
+
+        externalNativeBuild {
+            cmake {
+                // PLATFORM=Android tells raylib's own CMake build to target
+                // Android (native_app_glue, EGL/GLES, touch input) instead
+                // of the desktop GLFW backend.
+                arguments "-DPLATFORM=Android", "-DANDROID_STL=c++_shared"
+                cppFlags "-std=c++17"
+                abiFilters "arm64-v8a", "armeabi-v7a"
+            }
+        }
+    }
+
+    externalNativeBuild {
+        cmake {
+            path "CMakeLists.txt"
+            version "3.22.1"
+        }
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+    }
+}
