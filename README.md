@@ -6,6 +6,11 @@ Built from scratch by naneinf as a personal project to learn and experiment with
 
 «Project status: In development»
 
+<img width="632" height="651" alt="calculator_basic_mode" src="https://github.com/user-attachments/assets/96fea29d-d68e-48c8-985c-d8f34e95bbf8" />
+
+<img width="1065" height="706" alt="calculator_scientific_mode" src="https://github.com/user-attachments/assets/f573f23d-f660-4957-baa1-40165ea7599b" />
+
+
 # Features
 
 -  Expression-based calculator
